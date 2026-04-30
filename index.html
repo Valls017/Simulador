@@ -1,37 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simulador QPACK</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador QPACK - Ingeniería</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>Algoritmo de compresión de encabezados QPACK</h1>
+        <p>Simulador QPACK</p>
+    </header>
 
-  <header>
-    <h1>Simulador QPACK</h1>
-    <p>Compresión de encabezados en HTTP/3</p>
-  </header>
+    <div class="container">
+        <div class="card">
+            <h2>Entrada de Encabezado</h2>
+            <form id="headerForm">
+                <div class="form-group">
+                    <label for="hName">Nombre del Header</label>
+                    <input type="text" id="hName" required placeholder=":method">
+                </div>
+                <div class="form-group">
+                    <label for="hValue">Valor</label>
+                    <input type="text" id="hValue" required placeholder="GET">
+                </div>
+                <button type="submit">Ejecutar Compresión</button>
+            </form>
+        </div>
 
-  <main>
-    <section>
-      <h2>QPACK</h2>
-      <p>
-        QPACK permite comprimir encabezados HTTP/3 usando tablas y referencias.
-      </p>
-    </section>
+        <div class="card">
+            <h2>Salida</h2>
+            <div id="outputLog" class="log-box">Sin resultados</div>
+        </div>
 
-    <section>
-      <h2>Simulador</h2>
-      <p id="mensaje">Proyecto iniciado.</p>
-      <button id="btn">Probar</button>
-    </section>
-  </main>
+        <div class="card">
+            <h2>Tabla Estática</h2>
+            <div class="table-container">
+                <table id="staticTableUI">
+                    <thead><tr><th>Índice</th><th>Nombre</th><th>Valor</th></tr></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
 
-  <footer>
-    <p>Simulador web</p>
-  </footer>
-
-  <script src="script.js"></script>
+        <div class="card">
+            <h2>Tabla Dinámica</h2>
+            <div class="table-container">
+                <table id="dynamicTableUI">
+                    <thead><tr><th>Índice Din.</th><th>Nombre</th><th>Valor</th></tr></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
